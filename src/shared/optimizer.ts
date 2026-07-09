@@ -3,7 +3,8 @@ import { days, slots } from './defaultPreferences';
 import { Component, GroceryItem, MealPlan, MealTemplate, Technique, UserPreferences } from './types';
 const byId=<T extends {id:string}>(items:T[])=>Object.fromEntries(items.map(i=>[i.id,i])) as Record<string,T>;
 const ingredientById=byId(ingredients), componentById=byId(components), techniqueByOutput=Object.fromEntries(techniques.map(t=>[t.outputComponentId,t])) as Record<string,Technique>;
-function allowedMeal(meal:MealTemplate,prefs:UserPreferences){ if(!meal.diets.includes(prefs.diet)&&prefs.diet!=='none') return false; const text=meal.name.toLowerCase(); if(prefs.foodsToAvoid.some(f=>f&&text.includes(f.toLowerCase()))) return false; return meal.components.every(id=>{ const c=componentById[id]; if(!c) return false; if(prefs.diet!=='none'&&!c.diets.includes(prefs.diet)) return false; const tech=c.techniqueId?techniqueByOutput[c.id]:undefined; return !tech || prefs.appliances.includes(tech.appliance); }); }
+function activeDiets(prefs:UserPreferences){ return prefs.diets.filter(d=>d!=='none'); }
+function allowedMeal(meal:MealTemplate,prefs:UserPreferences){ const restrictions=activeDiets(prefs); if(restrictions.some(d=>!meal.diets.includes(d))) return false; const text=meal.name.toLowerCase(); if(prefs.foodsToAvoid.some(f=>f&&text.includes(f.toLowerCase()))) return false; return meal.components.every(id=>{ const c=componentById[id]; if(!c) return false; if(restrictions.some(d=>!c.diets.includes(d))) return false; const tech=c.techniqueId?techniqueByOutput[c.id]:undefined; return !tech || prefs.appliances.includes(tech.appliance); }); }
 function componentIngredients(component:Component){ return component.ingredientIds.map(id=>ingredientById[id]).filter(Boolean); }
 export function optimizeMealPlan(prefs:UserPreferences):MealPlan{
  const meals=[] as MealPlan['meals']; const usage=new Map<string,number>(); let rotation=0;
