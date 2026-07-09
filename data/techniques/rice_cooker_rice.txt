@@ -1,0 +1,7 @@
+id: rice_cooker_rice
+name: Rice Cooker Brown Rice
+appliance: Rice Cooker
+prep: 5
+cook: 40
+output: cooked_rice
+yield: 8 servings

@@ -1,0 +1,7 @@
+id: brown_rice
+name: Brown Rice
+package_sizes: 2
+---
+id: oats
+name: Rolled Oats
+package_sizes: 2

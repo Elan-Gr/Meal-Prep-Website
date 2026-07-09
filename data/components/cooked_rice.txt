@@ -1,0 +1,4 @@
+id: cooked_rice
+name: Cooked Brown Rice
+technique: rice_cooker_rice
+storage_life: 5

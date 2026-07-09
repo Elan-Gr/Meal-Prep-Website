@@ -1,0 +1,4 @@
+id: roasted_broccoli
+name: Roasted Broccoli
+technique: roasted_broccoli
+storage_life: 4

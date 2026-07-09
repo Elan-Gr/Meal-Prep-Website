@@ -1,0 +1,4 @@
+id: buffalo_wrap
+name: Buffalo Chicken Wrap
+components: cooked_chicken, tortilla, lettuce, buffalo
+slots: lunch, dinner

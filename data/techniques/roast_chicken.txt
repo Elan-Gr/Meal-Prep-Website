@@ -1,0 +1,8 @@
+id: roast_chicken
+name: Roasted Chicken
+appliance: Oven
+prep: 10
+cook: 30
+output: cooked_chicken
+yield: 6 servings
+inputs: chicken_breast 2 lb, olive_oil 2 tbsp, salt 1 tsp

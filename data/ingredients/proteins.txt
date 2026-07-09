@@ -1,0 +1,20 @@
+id: chicken_breast
+name: Chicken Breast
+category: protein
+cost: 4.99
+unit: lb
+package_sizes: 2,5
+calories: 165
+protein: 31
+fat: 3.5
+carbs: 0
+fiber: 0
+sodium: 74
+shelf_life_raw: 2
+shelf_life_cooked: 4
+freezes: true
+storage: refrigerated
+aisle: meat
+pantry: false
+spice: false
+diets: halal,kosher,gluten_free,dairy_free,nut_free

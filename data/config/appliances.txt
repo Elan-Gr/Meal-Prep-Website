@@ -1,0 +1,7 @@
+Oven
+Air Fryer
+Rice Cooker
+Pressure Cooker
+Slow Cooker
+Microwave
+Grill

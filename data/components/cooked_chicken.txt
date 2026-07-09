@@ -1,0 +1,5 @@
+id: cooked_chicken
+name: Cooked Chicken
+technique: roast_chicken
+storage_life: 4
+serving_size: 4 oz
