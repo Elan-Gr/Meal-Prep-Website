@@ -1,0 +1,10 @@
+import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
+const __dirname=path.dirname(fileURLToPath(import.meta.url));
+const app=express();
+const dist=path.join(__dirname,'..','dist');
+app.use(express.static(dist));
+app.get('/api/health',(_,res)=>res.json({ok:true,mode:'local-static-data'}));
+app.get('*',(_,res)=>res.sendFile(path.join(dist,'index.html')));
+app.listen(process.env.PORT||4174,()=>console.log('Meal Prep Optimizer running'));

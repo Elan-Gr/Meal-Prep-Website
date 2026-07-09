@@ -1,0 +1,7 @@
+id: tortilla
+name: Flour Tortillas
+package_sizes: 8
+---
+id: olive_oil
+name: Olive Oil
+pantry: true

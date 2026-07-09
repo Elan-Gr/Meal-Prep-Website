@@ -1,0 +1,4 @@
+id: teriyaki_bowl
+name: Teriyaki Chicken Rice Bowl
+components: cooked_chicken, cooked_rice, roasted_broccoli, teriyaki
+slots: lunch, dinner

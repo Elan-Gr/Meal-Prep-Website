@@ -1,0 +1,7 @@
+salt
+pepper
+olive_oil
+garlic_powder
+paprika
+onion_powder
+italian_seasoning

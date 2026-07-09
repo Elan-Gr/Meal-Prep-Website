@@ -1,0 +1,8 @@
+none
+vegetarian
+vegan
+halal
+kosher
+gluten_free
+dairy_free
+nut_free
